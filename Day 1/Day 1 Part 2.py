@@ -1,7 +1,7 @@
 sum = 0
 biggestSum = [0, 0, 0];
 
-file = open('input.txt', 'r')
+file = open('Day 1 Input.txt', 'r')
 lines = file.readlines()
 
 #read input
