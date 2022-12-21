@@ -8,21 +8,20 @@ playerChoice = ''
 
 #read line by line
 for line in lines:
-    lineSplit = line.split(" ")
 
     #elfChoice initialization
-    if (line[0] == "A"):
+    if (line.split(" ")[0] == "A"):
         elfChoice = 'rock'
-    elif (line[0] == 'B'):
+    elif (line.split(" ")[0] == 'B'):
         elfChoice = 'paper'
     else:
         elfChoice = 'scissors'
 
     #playerChoice initialization
-    if (line[1] == " X"):
+    if (line.split(" ")[1] == " X"):
         playerChoice = 'rock'
         points += 1
-    elif (line[1] == ' Y'):
+    elif (line.split(" ")[1] == ' Y'):
         playerChoice = 'paper'
         points += 2
     else:
