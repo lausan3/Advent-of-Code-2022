@@ -1,26 +1,28 @@
 from string import ascii_lowercase
-
-file = open('Day 3 Input.txt', 'r')
-lines = file.readlines()
-
-rucksack1 = ''
-rucksack2 = ''
+import math
 
 sum = 0
 
-for line in lines:
+with open('Day 3 Input.txt', 'r') as f:
+    for line in f:
     # maybe \n is considered in len(), careful
-    rucksack1 = line[0, len(line)/2]
-    rucksack2 = line[len(line)/2, ]
+        half = math.ceil(len(line)/2)
 
-    print(rucksack1)
-    print(rucksack2)
+        rucksack1 = line[0:half]
+        rucksack2 = line[half:]
 
-    for item in rucksack1:
-        for itemCheck in rucksack2:
-            if item.islower():
-                sum += item.ascii_lowercase()
-                print(sum)
-                break
-            else:
-                sum += item.ascii_lowercase() + 26
+        print(rucksack1)
+        print(rucksack2)
+
+        for item in rucksack1:
+            for itemCheck in rucksack2:
+                if item == itemCheck and item.islower():
+                    sum += int(ascii_lowercase.index(item))
+                    print(sum)
+                    break
+                else:
+                    sum += int(ascii_lowercase.index(item)) + 26
+                    print(sum)
+                    break
+
+print(sum)
